@@ -5,7 +5,7 @@
   "manifest_version": 2,
   "description": "Shows what stance the article having against their headline",
   "permissions": [
-    "https://us.cnn.com/politics/*", "https://us.cnn.com/business/*", "https://localhost:3000/*", "http://localhost:3000/*", "http://us.cnn.com/business/*", "http://us.cnn.com/politics/*"
+    "https://us.cnn.com/*", "http://us.cnn.com/*", "https://127.0.0.1:3000/*"
   ],
   "web_accessible_resources": ["locales/*"],
   "browser_action": {
@@ -21,13 +21,7 @@
   "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
   "homepage_url": "https://github.com/chimera-detector/experienceExtension",
   "content_scripts": [{
-      "matches": ["https://us.cnn.com/politics/*", "http://us.cnn.com/politics/*"],
-      "js": ["src/cnn.js"],
-      "run_at": "document_idle",
-      "all_frames": false
-    },
-    {
-      "matches": ["https://us.cnn.com/business/*", "http://us.cnn.com/business/*"],
+      "matches": ["https://us.cnn.com/*", "http://us.cnn.com/*"],
       "js": ["src/cnn.js"],
       "run_at": "document_idle",
       "all_frames": false
