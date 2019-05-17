@@ -17,7 +17,7 @@ const cnn_clickbait = function (node) {
   const articles = [...node.getElementsByClassName('cd__headline-text')];
 
   articles.forEach(function (el) {
-    var article = el.innerHTML;
+    var headline = el.innerHTML;
     var request = new XMLHttpRequest();
     request.onreadystatechage = function () {
       if (request.onreadystatechange === 4) {
