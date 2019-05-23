@@ -16,6 +16,7 @@ const cnn_inspection = function (node) {
     const ext_headlines = [...node.getElementsByClassName('cd__headline-text')];
 
     if (ext_headlines.length > 1) {
+        console.log("Outside of Article");
         ext_headlines.forEach(function (el) {
             var headline = el.innerText;
             var clickbait_req = new XMLHttpRequest();
@@ -49,11 +50,12 @@ const cnn_inspection = function (node) {
             clickbait_req.send(null);
         });
     } else {
+
         // recognize where the user located outside or inside of article.
         const inner_headlines = [...node.getElementsByClassName('pg-headline')];
+        let url = window.location.href; // store current location
 
         inner_headlines.forEach(function (el) {
-            var url = window.location.href; // store current location
             var stance_req = new XMLHttpRequest();
             stance_req.onreadystatechange = function () {
                 if (stance_req.readyState === 4 && stance_req.status === 200) {
