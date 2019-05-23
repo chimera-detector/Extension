@@ -15,7 +15,7 @@ const cnn_inspection = function (node) {
 
     const ext_headlines = [...node.getElementsByClassName('cd__headline-text')];
 
-    if (ext_headlines.length > 0) {
+    if (ext_headlines.length > 1) {
         ext_headlines.forEach(function (el) {
             var headline = el.innerText;
             var clickbait_req = new XMLHttpRequest();
