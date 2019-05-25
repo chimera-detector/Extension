@@ -13,7 +13,7 @@
 
 ### CHIMERA Stance Detector Components
 
-CHIMERA Stance Detector exists as major 2 different part, which means the one is server that  can process the request from the user interface directly using embedded ***Artificial Neural Network*** the other one is the user interface as i mentioned right before that supposed to launched as ***Browser Extension*** program such as chrome extension. The user interface will help people to recognize Fake News or Clickbaits more easily than the detection engine itself.
+CHIMERA Stance Detector exists as major 2 different part, which means the one is server that  can process the request from the user interface directly using embedded ***Artificial Neural Network*** the other one is the user interface as I mentioned right before that supposed to launched as ***Browser Extension*** program such as chrome extension. The user interface will help people to recognize Fake News or Clickbaits more easily than the detection engine itself.
 And we have subComponents below those two major component. A explanation of those will be attached soon.
 
 ### Specifications & Installation
