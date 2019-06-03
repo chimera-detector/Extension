@@ -48,6 +48,18 @@ header p{
   bottom: 0;
 }
 
+.toggle-container{
+  display: flex;
+  width: 100%;
+  margin: 0px auto;
+  text-align: center;
+  justify-content: space-between;
+}
+
+.toggle-text{
+  font-size: 13px;
+}
+
 button{
   display: inline-block;
   padding: 20px;
@@ -63,7 +75,7 @@ button{
 
 .activation-button{
   font-weight: 600;
-  color:#035a03;
+  color: #035a03;
   border-right: 1px solid white;
 }
 
