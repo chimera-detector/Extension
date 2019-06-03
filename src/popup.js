@@ -1,6 +1,6 @@
-const startButton = document.getElementsByClassName('activation-button')[0];
-const stopButton = document.getElementsByClassName('deactivation-button')[0];
-const languageSelect = document.getElementsByClassName('language-select')[0];
+const downloadButton = document.getElementsByClassName('activation-button')[0];
+const quitButton = document.getElementsByClassName('deactivation-button')[0];
+const toggleEngine = document.getElementsByClassName('switch')[0];
 const errorMessage = document.getElementsByClassName('error-message')[0];
 
 languageSelect.addEventListener('change', function (event) {
