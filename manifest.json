@@ -21,7 +21,7 @@
     "128": "media/icon128.png"
   },
   "content_security_policy": "script-src 'self'; object-src 'self'",
-  "homepage_url": "https://github.com/chimera-detector/experienceExtension",
+  "homepage_url": "https://github.com/chimera-detector/Extension",
   "content_scripts": [{
       "matches": ["https://edition.cnn.com/*", "http://edition.cnn.com/*"],
       "js": ["src/cnn.js"],
