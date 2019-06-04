@@ -68,17 +68,14 @@ const cnn_inspection = function (node) {
                       var data = JSON.parse(clickbait_req.responseText);
                       var clickbait = data.clickbaitiness;
                       if (clickbait < 60) {
-                          // let html = "<ul style='position:absolute;top:30px;right:10px;padding:5px;font-size:12px;line-height:1.8;background-color:#2ecc71;color:#fff;border-radius:5px'>👍 Not Clickbait</ul>";
-                          // el.insertAdjacentHTML('afterend', html);
-                          console.log("Below 60%");
+                          let html = "<span style='position:absolute;top:30px;right:10px;padding:5px;font-size:12px;line-height:1.8;background-color:#2ecc71;color:#fff;border-radius:5px'>👍 Not Clickbait</span>";
+                          el.insertAdjacentHTML('afterend', html);
                       } else if (clickbait > 90) {
-                          // let html = "<ul style='position:absolute;top:30px;right:10px;padding:5px;font-size:12px;line-height:1.8;background-color:#F27935;color:#fff;border-radius:5px'>💁 This is Clickbait</ul>";
-                          // el.insertAdjacentHTML('afterend', html);
-                          console.log("Above 90%");
+                          let html = "<span style='position:absolute;top:30px;right:10px;padding:5px;font-size:12px;line-height:1.8;background-color:#F27935;color:#fff;border-radius:5px'>💁 This is Clickbait</span>";
+                          el.insertAdjacentHTML('afterend', html);
                       } else {
-                          // let html = "<ul style='position:absolute;top:30px;right:10px;padding:5px;font-size:12px;line-height:1.8;background-color:#e67e22;color:#fff;border-radius:5px'>👻 " + clickbait + "% clickbait</ul>";
-                          // el.insertAdjacentHTML('afterend', html);
-                          console.log("ehh...Dealing");
+                          let html = "<span style='position:absolute;top:30px;right:10px;padding:5px;font-size:12px;line-height:1.8;background-color:#e67e22;color:#fff;border-radius:5px'>👻 " + clickbait + "% clickbait</span>";
+                          el.insertAdjacentHTML('afterend', html);
                       }
                   } else {
                     console.log("Response has empty string");
