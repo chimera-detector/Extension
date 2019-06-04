@@ -1,5 +1,5 @@
 {
-  "name": "CHIMERA Article Stance Detector",
+  "name": "CHIMERA for Chrome",
   "version": "0.0.1",
   "author": "Seounghan Song",
   "manifest_version": 2,
@@ -12,13 +12,15 @@
     "default_icon": {
       "16": "media/icon16.png",
       "128": "media/icon128.png"
-    }
+    },
+    "default_popup": "src/popup.html",
+    "default_title": "CHIMERA Article Analyzer"
   },
   "icons": {
     "16": "media/icon16.png",
     "128": "media/icon128.png"
   },
-  "content_security_policy": "script-src 'self'; https://ssl.google-analytics.com; object-src 'self'",
+  "content_security_policy": "script-src 'self'; object-src 'self'",
   "homepage_url": "https://github.com/chimera-detector/experienceExtension",
   "content_scripts": [{
       "matches": ["https://edition.cnn.com/*", "http://edition.cnn.com/*"],
