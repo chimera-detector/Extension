@@ -30,19 +30,17 @@ const cnn_inspection = function (node) {
                       var data = JSON.parse(stance_req.responseText);
                       var stance = data.stance;
                       if (stance === "agree") {
-                          // let html = "<ul style='position:absolute;top:30px;right:10px;padding:5px;font-size:12px;line-height:1.8;background-color:#2ecc71;color:#fff;border-radius:5px'>👍 Not Clickbait</ul>";
-                          // el.insertAdjacentHTML('afterend', html);
-                          console.log("agree");
+                          let html = "<span style='position:absolute;top:60px;right:20px;padding:5px;font-size:12px;line-height:1.8;background-color:#2ecc71;color:#fff;border-radius:5px'>📗 Agree</span>";
+                          el.insertAdjacentHTML('afterend', html);
                       } else if (stance === "disagree") {
-                          // let html = "<ul style='position:absolute;top:30px;right:10px;padding:5px;font-size:12px;line-height:1.8;background-color:#F27935;color:#fff;border-radius:5px'>💁 This is Clickbait</ul>";
-                            // el.insertAdjacentHTML('afterend', html);
-                          console.log("disagree");
+                          let html = "<span style='position:absolute;top:60px;right:20px;padding:5px;font-size:12px;line-height:1.8;background-color:#F27935;color:#fff;border-radius:5px'>📘 Disagree</span>";
+                          el.insertAdjacentHTML('afterend', html);
                       } else if (stance === "discuss") {
-                          // let html = "<ul style='position:absolute;top:30px;right:10px;padding:5px;font-size:12px;line-height:1.8;background-color:#e67e22;color:#fff;border-radius:5px'>👻 " + clickbait + "% clickbait</ul>";
-                          // el.insertAdjacentHTML('afterend', html);
-                          console.log("discuss");
+                          let html = "<span style='position:absolute;top:60px;right:20px;padding:5px;font-size:12px;line-height:1.8;background-color:#e67e22;color:#fff;border-radius:5px'>📙 Discuss</span>";
+                          el.insertAdjacentHTML('afterend', html);
                       } else {
-                          console.log("unrelated");
+                          let html = "<span style='position:absolute;top:60px;right:20px;padding:5px;font-size:12px;line-height:1.8;background-color:#e67e22;color:#fff;border-radius:5px'>📕 Unrelated</span>";
+                          el.insertAdjacentHTML('afterend', html);
                       }
                   } else {
                     console.log("Response has empty string");
