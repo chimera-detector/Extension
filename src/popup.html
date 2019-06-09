@@ -7,40 +7,55 @@
   <link rel="stylesheet" href="popup.css">
 </head>
 <body class="live-caption-popup">
-  <header>
-    <img src="../media/icon128.png" alt="Extension logo">
-    <h2 class="live-caption-title">CHIMERA</h2>
-    <p class="description"><em>No Critical fixes since <strong>June 3, 2019</strong></em></p>
+    <header>
+      <div id="Header">
+          <img src="../media/icon64.png" alt="Extension logo" style="vertical-align: middle">
+          <span>&nbsp; &nbsp; CHIMERA
+              <hr width="250" color="#ccc">
+          </span>
+        </div>
+    <!-- <h2 class="live-caption-title">CHIMERA</h2> -->
+    <!-- <p class="description"><em>No Critical fixes since <strong>June 3, 2019</strong></em></p> -->
   </header>
 
   <main class="content-container">
-
-    <div class="toggle-container">
-      <p class="toggle-text"><strong> Clickbait Detection Off </strong></p>
-      <label class="switch">
-        <input type="checkbox" checked>
-        <span class="slider round"></span>
-      </label>
+      
+    <div class="toggle-container" style="padding : 45 0 23 0">
+      <div id='dashboard'> </div>
     </div>
 
+    <div class="toggle-container" style="padding : 5 0 20 0">
+        <p class="toggle-text-download"><img src="../media/download-24.png" style="vertical-align: text-bottom"><strong> Download as File </strong></p>
+    </div>
 
     <div class="toggle-container">
-      <p class="toggle-text"><strong> Stance Detection Off </strong></p>
-      <label class="switch">
-        <input type="checkbox" checked>
-        <span class="slider round"></span>
-      </label>
-    </div>
+        <p class="toggle-text"><strong> Clickbait Detection </strong></p>
+        <label class="switch">
+          <input type="checkbox" checked>
+          <span class="slider round"></span>
+        </label>
+      </div>
+  
+    <div class="toggle-container">
+        <p class="toggle-text"><strong> Stance Detection </strong></p>
+        <label class="switch">
+          <input type="checkbox" checked>
+          <span class="slider round"></span>
+        </label>
+      </div>
 
     <p class="error-message"></p>
 
   </main>
 
-  <footer class="buttons-container">
+  <!-- <footer class="buttons-container">
     <button class="activation-button">Download as File</button>
     <button class="deactivation-button">Quit</button>
-  </footer>
+  </footer> -->
 
-  <script src="popup.js"></script>
+  <!-- <script src="popup.js"></script> -->
+  <script src="d3.v3.js"></script>
+  <script src="dashboard.js"></script>
+
 </body>
 </html>
