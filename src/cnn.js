@@ -49,7 +49,6 @@ const cnn_inspection = function (node) {
               }
           };
 
-          // console.log(headline);
           stance_req.open("GET", "https://127.0.0.1:3000/predict?URL=" + url, true);
           stance_req.send(null);
       });
@@ -76,13 +75,12 @@ const cnn_inspection = function (node) {
                           el.insertAdjacentHTML('afterend', html);
                       }
                   } else {
-                    console.log("Response has empty string");
+                      console.log("Response has empty string");
                   }
 
               }
           };
 
-          // console.log(headline);
           clickbait_req.open("GET", "https://127.0.0.1:3000/detect?headline=" + headline, true);
           clickbait_req.send(null);
       });
