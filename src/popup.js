@@ -1,18 +1,25 @@
 'use strict';
 
-function click(e) {
+function clickbait_action(e) {
+  console.log(e);
   chrome.tabs.executeScript(null,
-      {code:"console.log(document.getElementsByName('cname')); var elems = document.getElementsByName('cname'); if(elems) {for(var i = 0;i < elems.length;i++) {elems[i].style.display='none';}}"});
+      {code:"var elems = document.getElementsByName('cname'); if(elems) {for(var i = 0;i < elems.length;i++) {elems[i].style.display='none';}}"});
+
+  window.close();
+}
+
+function stance_action(e) {
+  chrome.tabs.executeScript(null,
+      {code:"var elems = document.getElementsByName('sname'); if(elems) {for(var i = 0;i < elems.length;i++) {elems[i].style.display='none';}}"});
 
   window.close();
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-  var labels = document.querySelectorAll('label');
-  console.log(labels);
-  for (var i = 0; i < labels.length; i++) {
-    labels[i].addEventListener('click', click);
-  }
+  var inputs = document.querySelectorAll('input');
+
+  inputs[0].addEventListener('input', clickbait_action);
+  inputs[1].addEventListener('input', stance_action);
 });
 
 // const downloadButton = document.getElementsByClassName('activation-button')[0];
