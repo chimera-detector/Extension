@@ -5,11 +5,12 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>CHIMERA</title>
   <link rel="stylesheet" href="popup.css">
+  <script src="popup.js"></script>
 </head>
 <body class="live-caption-popup">
     <header>
       <div id="Header">
-          <img src="../media/icon64.png" alt="Extension logo" style="vertical-align: middle">
+          <img src="../media/icon16.png" alt="Extension logo" style="vertical-align: middle">
           <span>&nbsp; &nbsp; CHIMERA
               <hr width="250" color="#ccc">
           </span>
@@ -19,7 +20,7 @@
   </header>
 
   <main class="content-container">
-      
+
     <div class="toggle-container" style="padding : 45 0 23 0">
       <div id='dashboard'> </div>
     </div>
@@ -31,15 +32,15 @@
     <div class="toggle-container">
         <p class="toggle-text"><strong> Clickbait Detection </strong></p>
         <label class="switch">
-          <input type="checkbox" checked>
+          <input id='clickbait-check' type="checkbox" checked>
           <span class="slider round"></span>
         </label>
       </div>
-  
+
     <div class="toggle-container">
         <p class="toggle-text"><strong> Stance Detection </strong></p>
         <label class="switch">
-          <input type="checkbox" checked>
+          <input id='stance-check' type="checkbox" checked>
           <span class="slider round"></span>
         </label>
       </div>
@@ -52,8 +53,6 @@
     <button class="activation-button">Download as File</button>
     <button class="deactivation-button">Quit</button>
   </footer> -->
-
-  <!-- <script src="popup.js"></script> -->
   <script src="d3.v3.js"></script>
   <script src="dashboard.js"></script>
 
