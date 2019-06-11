@@ -30,16 +30,16 @@ const cnn_inspection = function (node) {
                       var data = JSON.parse(stance_req.responseText);
                       var stance = data.stance;
                       if (stance === "agree") {
-                          let html = "<span style='position:absolute;top:60px;right:20px;padding:5px;font-size:12px;line-height:1.8;background-color:#2ecc71;color:#fff;border-radius:5px'>📗 Agree</span>";
+                          let html = "<span name='sname' style='position:absolute;top:60px;right:20px;padding:5px;font-size:12px;line-height:1.8;background-color:#2ecc71;color:#fff;border-radius:5px'>📗 Agree</span>";
                           el.insertAdjacentHTML('afterend', html);
                       } else if (stance === "disagree") {
-                          let html = "<span style='position:absolute;top:60px;right:20px;padding:5px;font-size:12px;line-height:1.8;background-color:#F27935;color:#fff;border-radius:5px'>📘 Disagree</span>";
+                          let html = "<span name='sname' style='position:absolute;top:60px;right:20px;padding:5px;font-size:12px;line-height:1.8;background-color:#F27935;color:#fff;border-radius:5px'>📘 Disagree</span>";
                           el.insertAdjacentHTML('afterend', html);
                       } else if (stance === "discuss") {
-                          let html = "<span style='position:absolute;top:60px;right:20px;padding:5px;font-size:12px;line-height:1.8;background-color:#F27935;color:#fff;border-radius:5px'>📙 Discuss</span>";
+                          let html = "<span name='sname' style='position:absolute;top:60px;right:20px;padding:5px;font-size:12px;line-height:1.8;background-color:#F27935;color:#fff;border-radius:5px'>📙 Discuss</span>";
                           el.insertAdjacentHTML('afterend', html);
                       } else {
-                          let html = "<span style='position:absolute;top:60px;right:20px;padding:5px;font-size:12px;line-height:1.8;background-color:#F27935;color:#fff;border-radius:5px'>📕 Unrelated</span>";
+                          let html = "<span name='sname' style='position:absolute;top:60px;right:20px;padding:5px;font-size:12px;line-height:1.8;background-color:#F27935;color:#fff;border-radius:5px'>📕 Unrelated</span>";
                           el.insertAdjacentHTML('afterend', html);
                       }
                   } else {
@@ -65,13 +65,13 @@ const cnn_inspection = function (node) {
                       var data = JSON.parse(clickbait_req.responseText);
                       var clickbait = data.clickbaitiness;
                       if (clickbait < 60) {
-                          let html = "<span style='position:absolute;top:30px;right:10px;padding:5px;font-size:12px;line-height:1.8;background-color:#2ecc71;color:#fff;border-radius:5px'>👍 " + clickbait + "% clickbait</span>";
+                          let html = "<span name='cname' style='position:absolute;top:30px;right:10px;padding:5px;font-size:12px;line-height:1.8;background-color:#2ecc71;color:#fff;border-radius:5px'>👍 " + clickbait + "% clickbait</span>";
                           el.insertAdjacentHTML('afterend', html);
                       } else if (clickbait > 90) {
-                          let html = "<span style='position:absolute;top:30px;right:10px;padding:5px;font-size:12px;line-height:1.8;background-color:#F27935;color:#fff;border-radius:5px'>💁 " + clickbait + "% clickbait</span>";
+                          let html = "<span name='cname' style='position:absolute;top:30px;right:10px;padding:5px;font-size:12px;line-height:1.8;background-color:#F27935;color:#fff;border-radius:5px'>💁 " + clickbait + "% clickbait</span>";
                           el.insertAdjacentHTML('afterend', html);
                       } else {
-                          let html = "<span style='position:absolute;top:30px;right:10px;padding:5px;font-size:12px;line-height:1.8;background-color:#F27935;color:#fff;border-radius:5px'>👻 " + clickbait + "% clickbait</span>";
+                          let html = "<span name='cname' style='position:absolute;top:30px;right:10px;padding:5px;font-size:12px;line-height:1.8;background-color:#F27935;color:#fff;border-radius:5px'>👻 " + clickbait + "% clickbait</span>";
                           el.insertAdjacentHTML('afterend', html);
                       }
                   } else {
@@ -97,6 +97,21 @@ const observer = new MutationObserver(function (mutations) {
             }
         });
     });
+});
+
+'use strict';
+
+function click(e) {
+  chrome.tabs.executeScript(null,
+      {code:"document.body.style.backgroundColor='" + e.target.id + "'"});
+  window.close();
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  var labels = document.querySelectorAll('label');
+  for (var i = 0; i < labels.length; i++) {
+    labels[i].addEventListener('click', click);
+  }
 });
 
 const config = {
