@@ -1,16 +1,25 @@
 'use strict';
 
 function clickbait_action(e) {
-  console.log(e);
-  chrome.tabs.executeScript(null,
-      {code:"var elems = document.getElementsByName('cname'); if(elems) {for(var i = 0;i < elems.length;i++) {elems[i].style.display='none';}}"});
+  if (e.target.checked) {
+    chrome.tabs.executeScript(null,
+        {code:"var elems = document.getElementsByName('cname'); if(elems) {for(var i = 0;i < elems.length;i++) {elems[i].style.display='inline-block';}}"});
+  } else {
+    chrome.tabs.executeScript(null,
+        {code:"var elems = document.getElementsByName('cname'); if(elems) {for(var i = 0;i < elems.length;i++) {elems[i].style.display='none';}}"});
+  }
 
-  window.close();
+  // window.close();
 }
 
 function stance_action(e) {
-  chrome.tabs.executeScript(null,
-      {code:"var elems = document.getElementsByName('sname'); if(elems) {for(var i = 0;i < elems.length;i++) {elems[i].style.display='none';}}"});
+  if (e.target.checked) {
+    chrome.tabs.executeScript(null,
+        {code:"var elems = document.getElementsByName('sname'); if(elems) {for(var i = 0;i < elems.length;i++) {elems[i].style.display='inline-block';}}"});
+  } else {
+    chrome.tabs.executeScript(null,
+        {code:"var elems = document.getElementsByName('sname'); if(elems) {for(var i = 0;i < elems.length;i++) {elems[i].style.display='none';}}"});
+  }
 
   window.close();
 }
@@ -18,8 +27,8 @@ function stance_action(e) {
 document.addEventListener('DOMContentLoaded', function () {
   var inputs = document.querySelectorAll('input');
 
-  inputs[0].addEventListener('input', clickbait_action);
-  inputs[1].addEventListener('input', stance_action);
+  inputs[0].addEventListener('click', clickbait_action);
+  inputs[1].addEventListener('click', stance_action);
 });
 
 // const downloadButton = document.getElementsByClassName('activation-button')[0];
