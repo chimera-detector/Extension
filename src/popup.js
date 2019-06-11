@@ -1,10 +1,8 @@
 'use strict';
 
 function click(e) {
-  // chrome.tabs.executeScript(null,
-  //     {code:"console.log(document.getElementsByName('cname')); var elems = document.getElementsByName('cname'); if(elems) {for(var i = 0;i < elems.length;i++) {elems[i].style.display='none';}}"});
   chrome.tabs.executeScript(null,
-      {code:"console.log(document.getElementsByName('keywords'));"});
+      {code:"console.log(document.getElementsByName('cname')); var elems = document.getElementsByName('cname'); if(elems) {for(var i = 0;i < elems.length;i++) {elems[i].style.display='none';}}"});
 
   window.close();
 }
