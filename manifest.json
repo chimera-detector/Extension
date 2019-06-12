@@ -5,7 +5,7 @@
   "manifest_version": 2,
   "description": "Shows what stance the article having against their headline",
   "permissions": [
-    "https://edition.cnn.com/*", "http://edition.cnn.com/*", "https://127.0.0.1:3000/*", "https://www.facebook.com/*", "http://www.facebook.com/*", "activeTab"
+    "https://edition.cnn.com/*", "http://edition.cnn.com/*", "https://127.0.0.1:3000/*", "https://www.facebook.com/*", "http://www.facebook.com/*", "activeTab", "storage"
   ],
   "web_accessible_resources": ["locales/*"],
   "browser_action": {
