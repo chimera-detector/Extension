@@ -1,6 +1,9 @@
 'use strict';
 
 function clickbait_action(e) {
+  // To set input switch value into storage
+  chrome.storage.local.set({'switch': e.target.checked});
+
   if (e.target.checked) {
     chrome.tabs.executeScript(null,
         {code:"var elems = document.getElementsByName('cname'); if(elems) {for(var i = 0;i < elems.length;i++) {elems[i].style.display='inline-block';}}"});
@@ -29,6 +32,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
   inputs[0].addEventListener('click', clickbait_action);
   inputs[1].addEventListener('click', stance_action);
+
+  // To get input switch value from storage
+  chrome.storage.local.get('switch', function(data) {
+    console.log(inputs[0].checked);
+    inputs[0].checked = data.switch;
+    console.log(inputs[0].checked);
+    console.log("===============");
+    // logs out "Object {testKey: "Test Value"}"
+  })
 });
 
 // const downloadButton = document.getElementsByClassName('activation-button')[0];
