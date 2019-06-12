@@ -2,7 +2,7 @@
 
 function clickbait_action(e) {
   // To set input switch value into storage
-  chrome.storage.local.set({'switch': e.target.checked});
+  chrome.storage.local.set({'c_switch': e.target.checked});
 
   if (e.target.checked) {
     chrome.tabs.executeScript(null,
@@ -16,6 +16,9 @@ function clickbait_action(e) {
 }
 
 function stance_action(e) {
+  // To set input switch value into storage
+  chrome.storage.local.set({'s_switch': e.target.checked});
+
   if (e.target.checked) {
     chrome.tabs.executeScript(null,
         {code:"var elems = document.getElementsByName('sname'); if(elems) {for(var i = 0;i < elems.length;i++) {elems[i].style.display='inline-block';}}"});
@@ -24,7 +27,7 @@ function stance_action(e) {
         {code:"var elems = document.getElementsByName('sname'); if(elems) {for(var i = 0;i < elems.length;i++) {elems[i].style.display='none';}}"});
   }
 
-  window.close();
+  // window.close();
 }
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -34,13 +37,17 @@ document.addEventListener('DOMContentLoaded', function () {
   inputs[1].addEventListener('click', stance_action);
 
   // To get input switch value from storage
-  chrome.storage.local.get('switch', function(data) {
-    console.log(inputs[0].checked);
-    inputs[0].checked = data.switch;
-    console.log(inputs[0].checked);
-    console.log("===============");
-    // logs out "Object {testKey: "Test Value"}"
-  })
+  chrome.storage.local.get('c_switch', function(data) {
+    inputs[0].checked = data.c_switch;
+    // logs out "Object {switch: boolean}"
+  });
+
+  // To get input switch value from storage
+  chrome.storage.local.get('s_switch', function(data) {
+    inputs[1].checked = data.s_switch;
+    // logs out "Object {switch: boolean}"
+  });
+
 });
 
 // const downloadButton = document.getElementsByClassName('activation-button')[0];
