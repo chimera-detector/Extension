@@ -1,9 +1,9 @@
 function draw(){
     var freqData=[
-        {State:'1st_Quarter',freq:{clickbait:4786, unrelated:1319, related:249}}
-        ,{State:'2nd',freq:{clickbait:1101, unrelated:412, related:674}}
-        ,{State:'3rd',freq:{clickbait:932, unrelated:2149, related:418}}
-        ,{State:'4th',freq:{clickbait:832, unrelated:1152, related:1862}}
+        {State:'1st_Quarter',freq:{clickbait:2390, unrelated:17281, related:10742}}
+        ,{State:'2nd',freq:{clickbait:2117, unrelated:10565, related:18003}}
+        ,{State:'3rd',freq:{clickbait:932, unrelated:8695, related:29938}}
+        ,{State:'4th',freq:{clickbait:832, unrelated:3098, related:28932}}
         // ,{State:'FL',freq:{low:4481, mid:3304, high:948}}
         // ,{State:'GA',freq:{low:1619, mid:167, high:1063}}
         // ,{State:'IA',freq:{low:1819, mid:247, high:1203}}
